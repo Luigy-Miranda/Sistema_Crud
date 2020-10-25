@@ -65,11 +65,6 @@ if (isset($_POST['first_name']) && isset($_POST['last_name']) &&
             return;
       }
     }
-//if(is_numeric($_POST["first_name"])  &&  is_numeric($_POST["last_name"]) &&
- //is_numeric($_POST["email"])  && isset(is_numeric($_POST["headline"])) && 
- //is_numeric($_POST["summary"])){
-  //     echo "All values are required"; 
-//}
 if (isset($_POST["add"])) {
   if(!isset($_POST['first_name']) &&
   !isset($_POST['last_name']) &&
@@ -99,14 +94,6 @@ if (isset($_POST["add"])) {
         (user_id, first_name, last_name, email, headline, summary)
         VALUES ('$id','$name','$setna','$ema','$head','$sum')");
         $ejecutar=mysqli_query($pdo,$stmt);
-       //$stmt->execute(array(
-        //':uid' => $_SESSION['user_id'],
-        //':fn' => $_POST['first_name'],
-        //':ln' => $_POST['last_name'],
-        //':em' => $_POST['email'],
-        //':he' => $_POST['headline'],
-        //':su' => $_POST['summary'])
-    //);
     $_SESSION['status']=$_SESSION['status']+1;
     $_SESSION["success"] = "Profile added";
     header('Location: index.php');
